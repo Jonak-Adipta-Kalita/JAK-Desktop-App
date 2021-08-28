@@ -1,13 +1,14 @@
 @font-face {
-	font-family: "Otomanopee One";
-	src: url("../../assets/fonts/OtomanopeeOne-Regular.ttf") format("truetype");
+    font-family: "Otomanopee One";
+    src: url("../../assets/fonts/OtomanopeeOne-Regular.ttf") format("truetype");
 }
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
-	font-family: "Otomanopee One";
+html,
+body {
+    font-family: "Otomanopee One";
 }
