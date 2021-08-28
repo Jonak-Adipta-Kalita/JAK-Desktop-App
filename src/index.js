@@ -1,13 +1,13 @@
 const { app, BrowserWindow } = require("electron");
 
 const createWindow = () => {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        icon: "assets/logo.png",
+    const mainWindow = new BrowserWindow({
+        icon: "assets/images/logo.png",
+		darkTheme: true,
     });
 
-    win.loadFile("src/index.html");
+	mainWindow.maximize();
+    mainWindow.loadFile("src/index.html");
 };
 
 app.whenReady().then(() => {
