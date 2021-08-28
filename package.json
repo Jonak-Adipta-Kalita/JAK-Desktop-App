@@ -1,23 +1,30 @@
 {
-  "name": "jak-desktop-app",
-  "version": "0.0.1",
-  "description": "A Desktop App made by JAK",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App.git"
-  },
-  "keywords": [
-    "desktop",
-    "app"
-  ],
-  "author": "Jonak Adipta Kalita",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App/issues"
-  },
-  "homepage": "https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App#readme"
+    "name": "jak-desktop-app",
+    "version": "0.0.1",
+    "description": "A Desktop App made by JAK",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo No Tests provided till now.",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "prettier": "prettier **/*.{js,css,json,md}",
+        "prettier:fix": "prettier --write **/*.{js,css,json,md}"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App.git"
+    },
+    "keywords": [
+        "desktop",
+        "app"
+    ],
+    "author": "Jonak Adipta Kalita",
+    "bugs": {
+        "url": "https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App/issues"
+    },
+    "homepage": "https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App#readme",
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "prettier": "2.3.2"
+    }
 }
