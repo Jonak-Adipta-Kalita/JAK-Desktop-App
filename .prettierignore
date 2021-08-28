@@ -7,3 +7,4 @@ test-fixtures/
 node_modules/
 build
 public
+src/scripts/bootstrap
