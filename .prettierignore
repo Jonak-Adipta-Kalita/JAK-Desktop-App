@@ -8,3 +8,4 @@ node_modules/
 build
 public
 src/scripts/bootstrap
+src/styles/bootstrap
