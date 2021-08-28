@@ -20,7 +20,7 @@ git clone https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App.git
 
 ### Installing The Required Modules
 
-To install the required modules, just open a terminal in the directory where this project is 
+To install the required modules, just open a terminal in the directory where this project is
 cloned. Now type:
 
 ```bash
@@ -34,6 +34,7 @@ and hit enter.
 ### Test
 
 To test the Application, open a Terminal in the cloned directory. Now type
+
 ```bash
 npm start
 # or
