@@ -1,1 +1,3 @@
-src/scripts/bootstrap
+src/bootstrap/
+src/fontawesome/
+src/scripts/jquery.js

@@ -1,16 +1,24 @@
 const electron = require("electron");
 const url = require("url");
 const path = require("path");
+const menu = require("./menu");
 
-const { app, BrowserWindow, Menu } = electron;
+const { app, BrowserWindow, ipcMain } = electron;
+
+const isWindows = process.platform === "win32";
+const isMac = process.platform === "darwin";
+
+let mainWindow;
 
 const createWindow = () => {
-    const mainWindow = new BrowserWindow({
-        icon: "assets/images/logo.ico",
-        darkTheme: true,
+    mainWindow = new BrowserWindow({
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js"),
+            nodeIntegration: true,
+        },
+        frame: isWindows ? false : true,
     });
 
-    mainWindow.maximize();
     mainWindow.loadURL(
         url.format({
             pathname: path.join(__dirname, "index.html"),
@@ -19,7 +27,9 @@ const createWindow = () => {
         })
     );
 
-    Menu.setApplicationMenu(null);
+    mainWindow.on("closed", function () {
+        mainWindow = null;
+    });
 };
 
 app.whenReady().then(() => {
@@ -27,9 +37,19 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") app.quit();
+    if (!isMac) app.quit();
+});
 
-    app.on("activate", () => {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow();
-    });
+app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
+
+ipcMain.on(`display-app-menu`, (_, args) => {
+    if (isWindows && mainWindow) {
+        menu.popup({
+            window: mainWindow,
+            x: args.x,
+            y: args.y,
+        });
+    }
 });

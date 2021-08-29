@@ -1,11 +1,6 @@
-.expo/
-.expo-shared/
-.vscode-test/
-out/
-dist/
-test-fixtures/
+.vscode/
 node_modules/
 build
-public
-src/scripts/bootstrap
-src/styles/bootstrap
+src/bootstrap/
+src/fontawesome/
+src/scripts/jquery.js

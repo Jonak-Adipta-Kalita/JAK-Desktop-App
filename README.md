@@ -48,6 +48,7 @@ and hit enter.
 -   Language: [JavaScript](https://www.javascript.com/)
 -   Language Framework: [Electron](https://www.electronjs.org/)
 -   CSS Framework: [Bootstrap](https://getbootstrap.com/)
+-   Icon: [Font Awesome](https://fontawesome.com/)
 
 ## Contributors
 
