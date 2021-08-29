@@ -13,7 +13,7 @@ const createWindow = () => {
         icon: "assets/images/logo.ico",
     });
 
-	mainWindow.maximize();
+    mainWindow.maximize();
 
     mainWindow.loadURL(
         url.format({
