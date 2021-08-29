@@ -8,8 +8,8 @@
         "test": "echo No Tests provided till now.",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
-        "prettier": "prettier **/*.{js,html,css,json,md}",
-        "prettier:fix": "prettier --write **/*.{js,html,css,json,md}",
+        "prettier": "prettier **/*.{js,html,css,md}",
+        "prettier:fix": "prettier --write **/*.{js,html,css,md}",
         "prepare": "husky install"
     },
     "repository": {
