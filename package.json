@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "description": "A Desktop App made by JAK",
     "main": "src/index.js",
+	"private": true,
     "scripts": {
         "start": "electron .",
         "test": "echo No Tests provided till now.",

@@ -1,10 +1,11 @@
 const electron = require("electron");
 const url = require("url");
 const path = require("path");
+const menuTemplate = require("./menuTemplate");
+const isSomething = require("./isSomething");
 
-const { app, BrowserWindow } = electron;
-
-const isMac = process.platform === "darwin";
+const { app, BrowserWindow, Menu } = electron;
+const { isMac } = isSomething;
 
 let mainWindow;
 
@@ -26,6 +27,9 @@ const createWindow = () => {
     mainWindow.on("closed", function () {
         mainWindow = null;
     });
+
+    const menu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menu);
 };
 
 app.whenReady().then(() => {
