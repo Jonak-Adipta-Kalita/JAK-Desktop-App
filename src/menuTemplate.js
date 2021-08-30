@@ -38,6 +38,7 @@ const menuTemplate = [
                 click() {
                     app.quit();
                 },
+                accelerator: "Alt+F4",
             },
         ],
     },
