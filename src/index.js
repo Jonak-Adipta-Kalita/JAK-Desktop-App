@@ -4,7 +4,7 @@ const path = require("path");
 const menuTemplate = require("./menuTemplate");
 const isSomething = require("./isSomething");
 
-const { app, BrowserWindow, Menu } = electron;
+const { app, BrowserWindow, Menu, ipcMain, nativeTheme } = electron;
 const { isMac } = isSomething;
 
 let mainWindow;
@@ -12,6 +12,10 @@ let mainWindow;
 const createWindow = () => {
     mainWindow = new BrowserWindow({
         icon: "assets/images/logo.ico",
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js"),
+            nodeIntegration: true,
+        },
     });
 
     mainWindow.maximize();
@@ -30,6 +34,19 @@ const createWindow = () => {
 
     const menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
+
+    ipcMain.handle("dark-mode:toggle", () => {
+        if (nativeTheme.shouldUseDarkColors) {
+            nativeTheme.themeSource = "light";
+        } else {
+            nativeTheme.themeSource = "dark";
+        }
+        return nativeTheme.shouldUseDarkColors;
+    });
+
+    ipcMain.handle("dark-mode:system", () => {
+        nativeTheme.themeSource = "system";
+    });
 };
 
 app.whenReady().then(() => {

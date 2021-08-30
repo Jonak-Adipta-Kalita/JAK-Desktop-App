@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Otomanopee One";
+    src: url("../../assets/fonts/OtomanopeeOne-Regular.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Otomanopee One";
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: #ddd;
+        color: black;
+    }
+}

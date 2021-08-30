@@ -1,15 +1,30 @@
-@font-face {
-    font-family: "Otomanopee One";
-    src: url("../../assets/fonts/OtomanopeeOne-Regular.ttf") format("truetype");
+.toggle-dark-mode-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px !important;
+    margin-right: 10px !important;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+.toggle-dark-mode-container h2 {
+    margin-right: 15px !important;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "Otomanopee One";
+#toggle-dark-mode {
+    background-color: #04aa6d;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+#toggle-dark-mode:hover {
+    opacity: 0.9;
 }
