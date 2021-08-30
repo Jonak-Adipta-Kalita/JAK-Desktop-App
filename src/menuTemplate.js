@@ -17,6 +17,9 @@ const menuTemplate = [
                 role: "zoomout",
             },
             {
+                type: "separator",
+            },
+            {
                 role: "togglefullscreen",
             },
         ],
