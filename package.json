@@ -2,6 +2,8 @@
     "name": "jak-desktop-app",
     "version": "0.0.1",
     "description": "A Desktop App made by JAK",
+    "author": "Jonak Adipta Kalita",
+    "license": "MIT",
     "main": "src/index.js",
     "private": true,
     "scripts": {
@@ -25,7 +27,6 @@
         "desktop",
         "app"
     ],
-    "author": "Jonak Adipta Kalita",
     "bugs": {
         "url": "https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App/issues"
     },
