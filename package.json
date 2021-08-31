@@ -11,9 +11,9 @@
         "lint:fix": "eslint --fix .",
         "prettier": "prettier **/*.{js,html,css,md,json}",
         "prettier:fix": "prettier --write **/*.{js,html,css,md,json}",
-        "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/images/logo.icns --prune=true --out=out/macos",
-        "package:win": "electron-packager . jak-desktop-app --overwrite --asar --platform=win32 --arch=ia32 --icon=assets/images/logo.ico --prune=true --out=out/windows --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"JAK Desktop App\"",
-        "package:linux": "electron-packager . jak-desktop-app --overwrite --asar --platform=linux --arch=x64 --icon=assets/images/logo.png --prune=true --out=out/linux",
+        "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/images/logo.icns --prune=true --out=build/darwin",
+        "package:win": "electron-packager . jak-desktop-app --overwrite --asar --platform=win32 --arch=ia32 --icon=assets/images/logo.ico --prune=true --out=build/win32 --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"JAK Desktop App\"",
+        "package:linux": "electron-packager . jak-desktop-app --overwrite --asar --platform=linux --arch=x64 --icon=assets/images/logo.png --prune=true --out=build/linux",
         "prepare": "husky install"
     },
     "repository": {
