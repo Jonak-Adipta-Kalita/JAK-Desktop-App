@@ -5,13 +5,24 @@ const menuTemplate = require("./menuTemplate");
 const isSomething = require("./isSomething");
 
 const { app, BrowserWindow, Menu, ipcMain, nativeTheme } = electron;
-const { isMac } = isSomething;
+const { isWindows, isMac, isLinux } = isSomething;
+
+// process.env.NODE_ENV = "production";
 
 let mainWindow;
+let iconFile;
+
+if (isWindows) {
+    iconFile = "assets/images/logo.ico";
+} else if (isMac) {
+    iconFile = "assets/images/logo.icns";
+} else if (isLinux) {
+    iconFile = "assets/images/logo.png";
+}
 
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        icon: "assets/images/logo.ico",
+        icon: iconFile,
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
             nodeIntegration: true,
@@ -60,3 +71,18 @@ app.whenReady().then(() => {
 app.on("window-all-closed", () => {
     if (!isMac) app.quit();
 });
+
+if (process.env.NODE_ENV !== "production") {
+    menuTemplate.push({
+        label: "Developer",
+        submenu: [
+            {
+                label: "Developer Tools",
+                role: "toggledevtools",
+            },
+            {
+                role: "reload",
+            },
+        ],
+    });
+}
