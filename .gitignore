@@ -150,6 +150,8 @@ dist
 # comment the following lines
 !.yarn/cache
 
+build/
+
 # and uncomment the following lines
 # .pnp.*
 
