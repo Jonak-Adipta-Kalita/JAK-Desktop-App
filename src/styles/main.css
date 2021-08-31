@@ -12,7 +12,6 @@
 }
 
 #toggle-dark-mode {
-    background-color: #04aa6d;
     border: none;
     color: white;
     padding: 20px;
@@ -27,4 +26,12 @@
 
 #toggle-dark-mode:hover {
     opacity: 0.9;
+}
+
+.toggle-dark-mode-container .dark-mode {
+    background-color: #333;
+}
+
+.toggle-dark-mode-container .light-mode {
+    background-color: #ddd;
 }

@@ -18,6 +18,8 @@ if (isWindows) {
     iconFile = "assets/images/logo.icns";
 } else if (isLinux) {
     iconFile = "assets/images/logo.png";
+} else {
+    iconFile = "";
 }
 
 const createWindow = () => {
