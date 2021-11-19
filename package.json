@@ -13,9 +13,10 @@
         "lint:fix": "eslint --fix .",
         "prettier": "prettier **/*.{js,html,css,md,json}",
         "prettier:fix": "prettier --write **/*.{js,html,css,md,json}",
-        "prepare": "husky install",
         "package": "electron-forge package",
-        "make": "electron-forge make"
+        "make": "electron-forge make",
+		"format": "eslint --fix . && prettier --write **/*.{js,html,css,md,json}",
+        "prepare": "husky install"
     },
     "repository": {
         "type": "git",
