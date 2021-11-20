@@ -15,7 +15,8 @@
         "prettier:fix": "prettier --write **/*.{js,html,css,md,json}",
         "package": "electron-forge package",
         "make": "electron-forge make",
-		"format": "eslint --fix . && prettier --write **/*.{js,html,css,md,json}",
+        "format": "eslint --fix . && prettier --write **/*.{js,html,css,md,json}",
+        "check:version": "ncu",
         "prepare": "husky install"
     },
     "repository": {
@@ -39,6 +40,7 @@
         "electron": "^15.3.1",
         "eslint": "^7.32.0",
         "husky": "^7.0.4",
+        "npm-check-updates": "^12.0.2",
         "prettier": "2.4.1"
     },
     "dependencies": {
