@@ -20,35 +20,19 @@ To Clone this Repository, open a terminal in a empty folder and type
 git clone https://github.com/Jonak-Adipta-Kalita/JAK-Desktop-App.git
 ```
 
-### Installing The Required Modules
-
-To install the required modules, just open a terminal in the directory where this project is
-cloned. Now type:
-
-```bash
-npm i
-# or
-yarn
-```
-
-and hit enter.
-
 ### Test
 
 To test the Application, open a Terminal in the cloned directory. Now type
 
 ```bash
-npm start
-# or
-yarn start
+mingw32-make
 ```
 
 and hit enter.
 
 ## Technology(s) Used
 
--   Language: [JavaScript](https://www.javascript.com/)
--   Language Framework: [Electron](https://www.electronjs.org/)
+-   Language: [C++]()
 
 ## Contributors
 
