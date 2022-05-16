@@ -1,16 +1,60 @@
-const electron = require("electron");
+const { app, BrowserWindow, Menu, ipcMain, nativeTheme } = require("electron");
 const url = require("url");
 const path = require("path");
-const menuTemplate = require("./menuTemplate");
-const isSomething = require("./isSomething");
 
-const { app, BrowserWindow, Menu, ipcMain, nativeTheme } = electron;
-const { isWindows, isMac, isLinux } = isSomething;
+const isMac = process.platform === "darwin";
+const isWindows = process.platform === "win32";
+const isLinux = process.platform === "linux";
+
+const menuTemplate = [
+    {
+        label: "View",
+        submenu: [
+            {
+                label: "Reset Zoom",
+                role: "resetzoom",
+            },
+            {
+                role: "zoomin",
+            },
+            {
+                role: "zoomout",
+            },
+            {
+                type: "separator",
+            },
+            {
+                role: "togglefullscreen",
+            },
+        ],
+    },
+    {
+        role: "window",
+        submenu: [
+            {
+                role: "minimize",
+            },
+            {
+                role: "close",
+            },
+            {
+                type: "separator",
+            },
+            {
+                label: "Exit",
+                click() {
+                    app.quit();
+                },
+                accelerator: "Alt+F4",
+            },
+        ],
+    },
+];
 
 // process.env.NODE_ENV = "production";
 
 let mainWindow;
-let iconFile;
+let iconFile: string;
 
 if (isWindows) {
     iconFile = "assets/images/logo.ico";
