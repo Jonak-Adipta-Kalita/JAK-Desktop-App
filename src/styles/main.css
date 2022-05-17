@@ -1,3 +1,7 @@
+.header h2 {
+    margin-top: 8px;
+}
+
 .toggle-dark-mode-container {
     display: flex;
     position: absolute;
@@ -5,16 +9,17 @@
     right: 0;
     margin-top: 5px !important;
     margin-right: 10px !important;
+    align-items: center;
 }
 
-.toggle-dark-mode-container h2 {
+.toggle-dark-mode-container h3 {
     margin-right: 15px !important;
 }
 
 #toggle-dark-mode {
     border: none;
     color: white;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
