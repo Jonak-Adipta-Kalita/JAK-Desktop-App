@@ -9,7 +9,7 @@
     "scripts": {
         "start": "npm run compile && electron-forge start",
         "test": "echo No Tests provided till now.",
-        "compile": "tsc && copyfiles -f src/index.html build && copyfiles -f src/styles/common.css build/styles && copyfiles -f src/styles/main.css build/styles && copyfiles -f src/scripts/main.js build/scripts",
+        "compile": "tsc && tailwindcss -i ./src/styles/globals.css -o ./build/styles/globals.css && copyfiles -f src/index.html build && copyfiles -f src/scripts/main.js build/scripts",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prettier": "prettier **/*.{js,html,css,md,json}",
@@ -44,6 +44,8 @@
         "husky": "^7.0.4",
         "npm-check-updates": "^12.0.2",
         "prettier": "2.4.1",
+        "prettier-plugin-tailwindcss": "^0.1.11",
+        "tailwindcss": "^3.0.24",
         "typescript": "^4.6.4"
     },
     "dependencies": {

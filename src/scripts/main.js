@@ -1,11 +1,9 @@
-document
-    .getElementById("toggle-dark-mode")
-    .addEventListener("click", async () => {
-        const isDarkMode = await window.darkMode.toggle();
-        document
-            .getElementById("toggle-dark-mode")
-            .classList.add(isDarkMode ? "light-mode" : "dark-mode");
-        document
-            .getElementById("toggle-dark-mode")
-            .classList.remove(isDarkMode ? "dark-mode" : "light-mode");
-    });
+const toggleDarkModBtn = document.getElementById("toggle-dark-mode");
+
+toggleDarkModBtn.addEventListener("click", async () => {
+    const isDarkMode = await window.darkMode.toggle();
+    if (toggleDarkModBtn.classList.contains("placeholder-mode"))
+        toggleDarkModBtn.classList.remove("placeholder-mode");
+    toggleDarkModBtn.classList.add(isDarkMode ? "light-mode" : "dark-mode");
+    toggleDarkModBtn.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
+});

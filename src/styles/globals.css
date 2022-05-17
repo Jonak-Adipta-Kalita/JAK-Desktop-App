@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "OtomanopeeOne";
+    font-weight: 600;
+    src: url("../../assets//fonts/OtomanopeeOne-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@layer components {
+    body {
+        @apply m-0 p-0 font-otomanopee-one;
+    }
+
+    .placeholder-mode {
+        @apply bg-cyan-500;
+    }
+
+    .dark-mode {
+        @apply bg-[#333];
+    }
+
+    .light-mode {
+        @apply bg-[#ddd];
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: #ddd;
+        color: black;
+    }
+}

@@ -11,20 +11,45 @@
             content="default-src 'self'; script-src 'self'"
         />
         <title>JAK Desktop App</title>
-        <link rel="stylesheet" href="styles/common.css" />
-        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/globals.css" />
     </head>
     <body>
-        <div id="main-body" class="main-body">
-            <div class="header">
-                <center><h2>JAK Desktop App</h2></center>
-                <div class="toggle-dark-mode-container">
-                    <h3>Switch Theme:</h3>
-                    <button id="toggle-dark-mode"></button>
+        <div id="main-body">
+            <div class="">
+                <center>
+                    <p class="mt-[8px] text-2xl">JAK Desktop App</p>
+                </center>
+                <div
+                    class="
+                        absolute
+                        top-0
+                        right-0
+                        mt-[5px]
+                        mr-[10px]
+                        flex
+                        items-center
+                    "
+                >
+                    <p class="mr-[15px] text-lg">Switch Theme:</p>
+                    <button
+                        id="toggle-dark-mode"
+                        class="
+                            placeholder-mode
+                            inline-block
+                            cursor-pointer
+                            items-center
+                            rounded-[100px]
+                            border-none
+                            p-[16px]
+                            text-[16px] text-white
+                            no-underline
+                            hover:opacity-[0.9]
+                        "
+                    ></button>
                 </div>
             </div>
 
-            <div class="body"></div>
+            <div class=""></div>
         </div>
 
         <script src="scripts/main.js"></script>
