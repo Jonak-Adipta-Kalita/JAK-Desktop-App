@@ -6,6 +6,8 @@ const isMac = process.platform === "darwin";
 const isWindows = process.platform === "win32";
 const isLinux = process.platform === "linux";
 
+process.env.NODE_ENV = "production";
+
 const menuTemplate = [
     {
         label: "View",
@@ -50,8 +52,6 @@ const menuTemplate = [
         ],
     },
 ];
-
-// process.env.NODE_ENV = "production";
 
 let mainWindow;
 let iconFile: string;
