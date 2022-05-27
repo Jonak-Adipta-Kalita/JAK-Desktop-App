@@ -126,9 +126,6 @@ if (process.env.NODE_ENV !== "production") {
                 label: "Developer Tools",
                 role: "toggledevtools",
             },
-            {
-                role: "reload",
-            },
         ],
     });
 }
