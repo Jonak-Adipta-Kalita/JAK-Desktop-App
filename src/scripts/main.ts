@@ -1,4 +1,10 @@
-const toggleDarkModBtn = document.getElementById("toggle-dark-mode");
+const toggleDarkModBtn = document.getElementById("toggle-dark-mode")!;
+
+interface Window {
+    darkMode: {
+        toggle: () => Promise<boolean>;
+    };
+}
 
 toggleDarkModBtn.addEventListener("click", async () => {
     const isDarkMode = await window.darkMode.toggle();
