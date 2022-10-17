@@ -1,26 +1,35 @@
-const { app, BrowserWindow, Menu, ipcMain, nativeTheme } = require("electron");
-const url = require("url");
-const path = require("path");
+import {
+    app,
+    BrowserWindow,
+    Menu,
+    ipcMain,
+    nativeTheme,
+    MenuItemConstructorOptions,
+    MenuItem,
+} from "electron";
+import url from "url";
+import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const isMac = process.platform === "darwin";
 const isWindows = process.platform === "win32";
 const isLinux = process.platform === "linux";
 
-// process.env.NODE_ENV = "production";
-
-const menuTemplate = [
+const menuTemplate: (MenuItemConstructorOptions | MenuItem)[] = [
     {
         label: "View",
         submenu: [
             {
                 label: "Reset Zoom",
-                role: "resetzoom",
+                role: "resetZoom",
             },
             {
-                role: "zoomin",
+                role: "zoomIn",
             },
             {
-                role: "zoomout",
+                role: "zoomOut",
             },
             {
                 type: "separator",
@@ -124,7 +133,11 @@ if (process.env.NODE_ENV !== "production") {
         submenu: [
             {
                 label: "Developer Tools",
-                role: "toggledevtools",
+                role: "toggleDevTools",
+            },
+            {
+                label: "Reload Window",
+                role: "reload",
             },
         ],
     });
