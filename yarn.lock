@@ -1591,10 +1591,10 @@ electron-winstaller@^5.0.0:
     lodash.template "^4.2.2"
     temp "^0.9.0"
 
-electron@^21.0.0:
-  version "21.0.0"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-21.0.0.tgz#d4f23c9cf457e6b64d4158f2c21f75c98b241c81"
-  integrity sha512-7HGxgaH0goYsq5m23rbLuKNwxOP4wS/JTNVTYt4n+a4sPkxI97Fcngh55pHaIvvMO3jKZ9yzll7L/D1dHwMdLA==
+electron@^21.2.1:
+  version "21.2.1"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-21.2.1.tgz#a6bbf4fee7ed985c739cc0d87fbef0ea4559da57"
+  integrity sha512-RLuFstGpHk1wtCRm9Kd+mhLjHZ5+m83+GQ/CsVl06OT7ikCT68yXMEgPmSkgmN5WjzlorsK6H5hIk9Sf6P/7Lg==
   dependencies:
     "@electron/get" "^1.14.1"
     "@types/node" "^16.11.26"
