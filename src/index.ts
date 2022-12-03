@@ -7,11 +7,16 @@ import {
     MenuItemConstructorOptions,
     MenuItem,
 } from "electron";
-import url from "url";
-import path from "path";
 import dotenv from "dotenv";
 
 dotenv.config();
+
+declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
+
+if (require("electron-squirrel-startup")) {
+    app.quit();
+}
 
 const isMac = process.platform === "darwin";
 const isWindows = process.platform === "win32";
@@ -79,20 +84,14 @@ const createWindow = () => {
     mainWindow = new BrowserWindow({
         icon: iconFile,
         webPreferences: {
-            preload: path.join(__dirname, "preload.js"),
+            preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             nodeIntegration: true,
         },
     });
 
     mainWindow.maximize();
 
-    mainWindow.loadURL(
-        url.format({
-            pathname: path.join(__dirname, "index.html"),
-            protocol: "file:",
-            slashes: true,
-        })
-    );
+    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     mainWindow.on("closed", function () {
         mainWindow = null;

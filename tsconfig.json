@@ -1,9 +1,19 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "ES6",
+        "allowJs": true,
         "module": "commonjs",
-        "strict": true,
+        "skipLibCheck": true,
         "esModuleInterop": true,
-        "outDir": "./build"
-    }
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "paths": {
+            "*": ["node_modules/*"]
+        }
+    },
+    "include": ["src/**/*"]
 }
