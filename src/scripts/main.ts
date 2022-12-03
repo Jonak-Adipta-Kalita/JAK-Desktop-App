@@ -1,4 +1,4 @@
-const toggleDarkModBtn = document.getElementById("toggle-dark-mode")!;
+const toggleDarkModeBtn = document.getElementById("toggle-dark-mode")!;
 
 interface Window {
     darkMode: {
@@ -6,10 +6,10 @@ interface Window {
     };
 }
 
-toggleDarkModBtn.addEventListener("click", async () => {
+toggleDarkModeBtn.addEventListener("click", async () => {
     const isDarkMode = await window.darkMode.toggle();
-    if (toggleDarkModBtn.classList.contains("placeholder-mode"))
-        toggleDarkModBtn.classList.remove("placeholder-mode");
-    toggleDarkModBtn.classList.add(isDarkMode ? "light-mode" : "dark-mode");
-    toggleDarkModBtn.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
+    if (toggleDarkModeBtn.classList.contains("placeholder-mode"))
+        toggleDarkModeBtn.classList.remove("placeholder-mode");
+    toggleDarkModeBtn.classList.add(isDarkMode ? "light-mode" : "dark-mode");
+    toggleDarkModeBtn.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
 });
