@@ -12,6 +12,7 @@ export const plugins = [
         onBuildEnd: {
             scripts: [
                 "tailwindcss -i ./src/styles/globals.css -o ./.webpack/renderer/main_window/styles/globals.css",
+                "copyfiles ./assets/fonts/OtomanopeeOne-Regular.ttf ./.webpack/renderer/main_window",
             ],
             blocking: true,
         },
