@@ -1,11 +1,8 @@
-import * as ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import HomePage from "./components/HomePage";
 
 export const render = () => {
-    ReactDOM.render(
-        <>
-            <HomePage />
-        </>,
-        document.getElementById("body")
-    );
+    const container = document.getElementById("body");
+    const root = createRoot(container!);
+    root.render(<HomePage />);
 };
