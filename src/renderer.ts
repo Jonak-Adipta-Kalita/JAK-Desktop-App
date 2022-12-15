@@ -1,10 +1,12 @@
-const toggleDarkModeBtn = document.getElementById("toggle-dark-mode")!;
-
-interface Window {
-    darkMode: {
-        toggle: () => Promise<boolean>;
-    };
+declare global {
+    interface Window {
+        darkMode: {
+            toggle: () => Promise<boolean>;
+        };
+    }
 }
+
+const toggleDarkModeBtn = document.getElementById("toggle-dark-mode")!;
 
 toggleDarkModeBtn.addEventListener("click", async () => {
     const isDarkMode = await window.darkMode.toggle();
@@ -13,3 +15,7 @@ toggleDarkModeBtn.addEventListener("click", async () => {
     toggleDarkModeBtn.classList.add(isDarkMode ? "light-mode" : "dark-mode");
     toggleDarkModeBtn.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
 });
+
+import { render } from "./app";
+
+render();
